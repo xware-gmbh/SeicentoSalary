@@ -1,5 +1,12 @@
 # SeicentoSalary
 SeicentoSalary ist eine Weblösung für die Verwaltung von Lohnzahlungen nach Schweizer Recht.
 
-## Dockerhub and GitHub
-The Dockerfile Definition in this directory will directly pull the war file from github release and pack it into a container.
+#### Prereq
+Die folgenden Komponenten werden Vorausgesetzt:
+* Ein Azure AD Account (AAD) von Microsoft für die Authentication
+* Eine Docker Installation
+* Eine DB (MSSQL). Grundsätzlich sind andere DB's ebenfalls möglich.
+
+#### Installation Steps
+
+
