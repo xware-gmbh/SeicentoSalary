@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<?xdevuiml version="1.0"?>
+<?template BROWSER_XGA?>
+<?import ??>
+<?import ch.xwr.seicentobookit.entities.SalaryBvgBaseLine?>
+<?import com.xdev.ui.XdevButton?>
+<?import com.xdev.ui.XdevFieldGroup?>
+<?import com.xdev.ui.XdevGridLayout?>
+<?import com.xdev.ui.XdevHorizontalLayout?>
+<?import com.xdev.ui.XdevLabel?>
+<?import com.xdev.ui.XdevPopupDateField?>
+<?import com.xdev.ui.XdevTextField?>
+<?import com.xdev.ui.XdevView?>
+<?import com.xdev.ui.entitycomponent.combobox.XdevComboBox?>
+<XdevView xmlns:x="http://xml.xdev-software.com/xdevuiml" x:name="SalaryBvgBaseLinePopup">
+    <x:constraints zpos="0" width="100%" height="100%" />
+    <XdevGridLayout x:name="form">
+        <x:constraints zpos="0" width="100%" height="100%" />
+        <XdevComboBox x:name="comboBoxState">
+            <x:constraints gridx="2" gridy="5" weighty="0.0" weightx="1.0" width="0px" height="0px" />
+            <x:typeArguments>
+                <typeArgument type="?" />
+            </x:typeArguments>
+        </XdevComboBox>
+        <XdevFieldGroup x:name="fieldGroup" x:entityType="SalaryBvgBaseLine">
+            <x:typeArguments>
+                <typeArgument type="SalaryBvgBaseLine" />
+            </x:typeArguments>
+            <x:fields>
+                <entry name="" property="sbxId" />
+                <entry name="dateSbxValidFrom" property="sbxValidFrom" />
+                <entry name="txtSbxAgeStartYear" property="sbxAgeStartYear" />
+                <entry name="txtSbxCompany" property="sbxCompany" />
+                <entry name="txtSbxWorker" property="sbxWorker" />
+                <entry name="comboBoxState" property="sbxState" />
+                <entry name="" property="salaryBvgBasis" />
+            </x:fields>
+        </XdevFieldGroup>
+        <XdevLabel x:name="lblSbxValidFrom" value="Gültig ab">
+            <x:constraints gridx="1" gridy="1" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevPopupDateField tabIndex="2" x:name="dateSbxValidFrom">
+            <x:constraints gridx="2" gridy="1" weighty="0.0" weightx="1.0" width="-1px" height="0px" />
+        </XdevPopupDateField>
+        <XdevLabel x:name="lblSbxAgeStartYear" value="Alter ab">
+            <x:constraints gridx="1" gridy="2" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevTextField columns="5" tabIndex="3" x:name="txtSbxAgeStartYear">
+            <x:constraints gridx="2" gridy="2" weighty="0.0" weightx="1.0" width="100%" height="0px" />
+        </XdevTextField>
+        <XdevLabel x:name="lblSbxCompany" value="Arbeitgeber %">
+            <x:constraints gridx="1" gridy="3" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevTextField columns="5" tabIndex="4" x:name="txtSbxCompany">
+            <converter numberType="Double" numberFormatType="number" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+            <x:constraints gridx="2" gridy="3" weighty="0.0" weightx="1.0" width="100%" height="0px" />
+        </XdevTextField>
+        <XdevLabel x:name="lblSbxWorker" value="Arbeitnehmer %">
+            <x:constraints gridx="1" gridy="4" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevTextField columns="5" tabIndex="5" x:name="txtSbxWorker">
+            <converter numberType="Double" numberFormatType="number" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+            <x:constraints gridx="2" gridy="4" weighty="0.0" weightx="1.0" width="100%" height="0px" />
+        </XdevTextField>
+        <XdevLabel x:name="lblSbxState" value="Status">
+            <x:constraints gridx="1" gridy="5" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevHorizontalLayout x:name="horizontalLayout" margin="">
+            <x:constraints gridx="1" gridy="6" weighty="0.0" weightx="0.0" width="0px" alignment="TOP_CENTER" gridWidth="2" height="0px" />
+            <XdevButton icon="FontAwesome.SAVE" caption="Speichern" tabIndex="8" x:name="cmdSave" x:shortcut="ENTER">
+                <x:constraints weightx="0.0" width="0px" alignment="MIDDLE_LEFT" height="0px" />
+                <x:event>click.buttonClick</x:event>
+            </XdevButton>
+            <XdevButton icon="FontAwesome.CLOSE" caption="Schliessen" x:name="cmdClose" x:shortcut="ESCAPE">
+                <x:constraints weightx="0.0" width="0px" alignment="MIDDLE_LEFT" height="0px" />
+                <x:event>click.buttonClick</x:event>
+            </XdevButton>
+        </XdevHorizontalLayout>
+    </XdevGridLayout>
+</XdevView>
+

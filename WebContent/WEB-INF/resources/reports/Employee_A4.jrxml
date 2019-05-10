@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-06-22T14:49:01 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Employee_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eedabddd-8647-4b7a-9caa-b09c1e391462">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="salary MSSQL local"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="IkVtcGxveWVlIiBBUyAsMTAzLDg5LDI1ZTQ2ZjZkLTJkMGQtNDZjOC1iMjQyLTYyZWQ3M2RhNTY2Zjs="/>
+	<queryString>
+		<![CDATA[SELECT "Employee"."empNumber",
+	"Employee"."empFirstName",
+	"Employee"."empLastName",
+	"Employee"."empAddress",
+	"Employee"."empZip",
+	"Employee"."empPlace",
+	"Employee"."empAhvnbr",
+	"Employee"."empStartwork",
+	"Employee"."empEndWork",
+	"Employee"."empCostAccount",
+	"Employee"."empState",
+	"Employee"."empbnkId",
+	"Employee"."empsleId",
+	"Employee"."empsbeId",
+	"Employee"."empwrrId"
+FROM "Employee"]]>
+	</queryString>
+	<field name="empNumber" class="java.lang.Long"/>
+	<field name="empFirstName" class="java.lang.String"/>
+	<field name="empLastName" class="java.lang.String"/>
+	<field name="empAddress" class="java.lang.String"/>
+	<field name="empZip" class="java.lang.String"/>
+	<field name="empPlace" class="java.lang.String"/>
+	<field name="empAhvnbr" class="java.lang.String"/>
+	<field name="empStartwork" class="java.sql.Date"/>
+	<field name="empEndWork" class="java.sql.Date"/>
+	<field name="empCostAccount" class="java.lang.String"/>
+	<field name="empState" class="java.lang.Short"/>
+	<field name="empbnkId" class="java.lang.Long"/>
+	<field name="empsleId" class="java.lang.Long"/>
+	<field name="empsbeId" class="java.lang.Long"/>
+	<field name="empwrrId" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="81" height="30" uuid="7d5e8f65-41dd-495d-9d21-0543d463a9be"/>
+				<text><![CDATA[empNumber]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="0" width="79" height="30" uuid="5a232b87-65de-4c1c-8804-ee658df09a4b"/>
+				<text><![CDATA[empFirstName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="0" width="79" height="30" uuid="a86f8cd9-2285-4d83-8e00-881be39fd7a9"/>
+				<text><![CDATA[empLastName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="0" width="79" height="30" uuid="1023c406-8dee-4444-b4ee-128e63b7df5d"/>
+				<text><![CDATA[empAddress]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="0" width="79" height="30" uuid="f9ddd572-2aba-4815-b417-afb65d0c91ca"/>
+				<text><![CDATA[empZip]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="0" width="79" height="30" uuid="5e0fa17e-738d-4f4b-961c-de0c28a85d52"/>
+				<text><![CDATA[empPlace]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="0" width="79" height="30" uuid="1a641af7-c55e-4853-9c87-843676ccabd7"/>
+				<text><![CDATA[empAhvnbr]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="68" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="28" width="81" height="30" uuid="d9b89773-654d-4807-8efe-2f648fc21513"/>
+				<textFieldExpression><![CDATA[$F{empNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="28" width="79" height="30" uuid="be9a7a92-3be7-46f7-a06a-85c10686ef58"/>
+				<textFieldExpression><![CDATA[$F{empFirstName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="28" width="79" height="30" uuid="045bbf0c-1b1d-4f9c-84c9-afa778c2da5e"/>
+				<textFieldExpression><![CDATA[$F{empLastName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="239" y="28" width="79" height="30" uuid="e5221ada-913c-40fd-8735-8ee586146b14"/>
+				<textFieldExpression><![CDATA[$F{empAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="28" width="79" height="30" uuid="3c16849e-bfb8-472e-a179-ba174165b000"/>
+				<textFieldExpression><![CDATA[$F{empZip}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="28" width="79" height="30" uuid="9f282000-f483-4c4d-a624-410d3d17e0fc"/>
+				<textFieldExpression><![CDATA[$F{empPlace}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="476" y="28" width="79" height="30" uuid="e66c36d0-928b-48d1-bb29-e2aa89af875b"/>
+				<textFieldExpression><![CDATA[$F{empAhvnbr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

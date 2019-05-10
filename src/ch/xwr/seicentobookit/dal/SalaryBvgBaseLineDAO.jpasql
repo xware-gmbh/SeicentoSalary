@@ -1,0 +1,13 @@
+import ch.xwr.seicentobookit.entities.SalaryBvgBase
+import ch.xwr.seicentobookit.entities.SalaryBvgBaseLine
+import java.util.Date
+
+findByHeader(SalaryBvgBase dao)
+{
+	select * from SalaryBvgBaseLine where salaryBvgBasis = :dao order by sbxValidFrom desc, sbxAgeStartYear asc
+}
+
+findByHeaderAndDate(SalaryBvgBase dao, Date salaryDate, int ageYear)
+{
+	select * from SalaryBvgBaseLine where salaryBvgBasis = :dao and sbxValidFrom <= :salaryDate and sbxAgeStartYear <= :ageYear order by sbxValidFrom desc, sbxAgeStartYear desc
+}

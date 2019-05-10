@@ -1,0 +1,5 @@
+import ch.xwr.seicentobookit.entities.RowEntity
+findByName(String name)
+{
+	select * from RowEntity where entName = :name 
+}

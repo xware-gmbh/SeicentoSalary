@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+
+<hibernate-reverse-engineering>
+	<type-mapping>
+		<sql-type jdbc-type="NUMERIC" precision="1" not-null="true"
+			hibernate-type="boolean" />
+		<sql-type jdbc-type="NUMERIC" precision="1"
+			hibernate-type="java.lang.Boolean" />
+		<sql-type jdbc-type="NUMERIC" precision="3" scale="0"
+			not-null="true" hibernate-type="short" />
+		<sql-type jdbc-type="NUMERIC" precision="3" scale="0"
+			hibernate-type="java.lang.Short" />
+		<sql-type jdbc-type="NUMERIC" scale="0" not-null="true"
+			hibernate-type="long" />
+		<sql-type jdbc-type="NUMERIC" scale="0"
+			hibernate-type="java.lang.Long" />
+		<sql-type jdbc-type="NUMERIC" not-null="true"
+			hibernate-type="double" />
+		<sql-type jdbc-type="NUMERIC" hibernate-type="java.lang.Double" />
+		<sql-type jdbc-type="DECIMAL" name="money" not-null="true"
+			hibernate-type="double" />
+		<sql-type jdbc-type="DECIMAL" name="money"
+			hibernate-type="java.lang.Double" />
+		<sql-type jdbc-type="TINYINT" precision="1" not-null="true"
+			hibernate-type="boolean" />
+		<sql-type jdbc-type="TINYINT" precision="1"
+			hibernate-type="java.lang.Boolean" />
+		<sql-type jdbc-type="TINYINT" not-null="true"
+			hibernate-type="short" />
+		<sql-type jdbc-type="TINYINT" hibernate-type="java.lang.Short" />
+		<sql-type jdbc-type="NCHAR" hibernate-type="java.lang.String" />
+		<sql-type jdbc-type="NVARCHAR"
+			hibernate-type="java.lang.String" />
+		<sql-type jdbc-type="LONGNVARCHAR"
+			hibernate-type="java.lang.String" />
+		<sql-type jdbc-type="NCLOB" hibernate-type="java.lang.String" />
+		<!-- <sql-type jdbc-type="MONEY" not-null="true" hibernate-type="java.lang.Double" 
+			/> -->
+		<!-- <sql-type jdbc-type="SMALLMONEY" not-null="true" -->
+		<!-- hibernate-type="java.lang.Double" /> -->
+	</type-mapping>
+	<table catalog="devseicentobk" schema="dbo" name="RowEntity"></table>
+</hibernate-reverse-engineering>
+

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<?xdevuiml version="1.0"?>
+<?template BROWSER_XGA?>
+<?import ch.xwr.seicentobookit.entities.SalaryCalculationLine?>
+<?import com.vaadin.ui.ComboBox?>
+<?import com.xdev.ui.XdevButton?>
+<?import com.xdev.ui.XdevFieldGroup?>
+<?import com.xdev.ui.XdevGridLayout?>
+<?import com.xdev.ui.XdevHorizontalLayout?>
+<?import com.xdev.ui.XdevLabel?>
+<?import com.xdev.ui.XdevPopupDateField?>
+<?import com.xdev.ui.XdevTextField?>
+<?import com.xdev.ui.XdevView?>
+<XdevView xmlns:x="http://xml.xdev-software.com/xdevuiml" x:name="SalaryCalculationLinePopup">
+    <x:constraints zpos="0" width="100%" height="100%" />
+    <XdevGridLayout x:name="form">
+        <x:constraints zpos="0" width="100%" height="100%" />
+        <XdevFieldGroup x:name="fieldGroup" x:entityType="SalaryCalculationLine">
+            <x:typeArguments>
+                <typeArgument type="SalaryCalculationLine" />
+            </x:typeArguments>
+            <x:fields>
+                <entry name="dateSlxValidFrom" property="slxValidFrom" />
+                <entry name="txtSlxFactorAhv" property="slxFactorAhv" />
+                <entry name="txtSlxFactorAlv" property="slxFactorAlv" />
+                <entry name="txtSlxFactorKtg" property="slxFactorKtg" />
+                <entry name="txtSlxFactorFak" property="slxFactorFak" />
+                <entry name="txtSlxFactorAdmin" property="slxFactorAdmin" />
+                <entry name="txtSlxFactorSol" property="slxFactorSol" />
+                <entry name="txtSlxCoordinationAlv" property="slxCoordinationAlv" />
+                <entry name="txtSlxSldLowerBoundry" property="slxSldLowerBoundry" />
+                <entry name="txtSlxSldUpperBoundry" property="slxSldUpperBoundry" />
+                <entry name="comboBoxState" property="slxState" />
+            </x:fields>
+        </XdevFieldGroup>
+        <XdevLabel x:name="lblSlxValidFrom" value="Gültigab">
+            <x:constraints gridx="1" gridy="1" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevPopupDateField tabIndex="1" x:name="dateSlxValidFrom">
+            <x:constraints gridx="2" gridy="1" weighty="0.0" weightx="1.0" width="-1px" height="0px" />
+        </XdevPopupDateField>
+        <XdevLabel x:name="lblSlxFactorAhv" value="AHV Beitrag">
+            <x:constraints gridx="1" gridy="2" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevTextField columns="5" tabIndex="2" x:name="txtSlxFactorAhv">
+            <x:constraints gridx="2" gridy="2" weighty="0.0" weightx="1.0" width="-1px" height="0px" />
+        </XdevTextField>
+        <XdevLabel x:name="lblSlxCoordinationAlv" value="Koordinationslohn ALV">
+            <x:constraints gridx="3" gridy="2" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevTextField columns="5" tabIndex="8" x:name="txtSlxCoordinationAlv">
+            <x:constraints gridx="4" gridy="2" weighty="0.0" weightx="1.0" width="-1px" height="0px" />
+        </XdevTextField>
+        <XdevLabel x:name="lblSlxFactorAlv" value="ALV Beitrag">
+            <x:constraints gridx="1" gridy="3" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevTextField columns="5" tabIndex="3" x:name="txtSlxFactorAlv">
+            <x:constraints gridx="2" gridy="3" weighty="0.0" weightx="1.0" width="-1px" height="0px" />
+        </XdevTextField>
+        <XdevLabel x:name="lblSlxFactorKtg" value="KTG Beitrag">
+            <x:constraints gridx="1" gridy="4" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevTextField columns="5" tabIndex="4" x:name="txtSlxFactorKtg">
+            <x:constraints gridx="2" gridy="4" weighty="0.0" weightx="1.0" width="-1px" height="0px" />
+        </XdevTextField>
+        <XdevLabel x:name="lblSlxSldUpperBoundry" value="Obergrenze SOL">
+            <x:constraints gridx="3" gridy="4" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevTextField columns="5" tabIndex="9" x:name="txtSlxSldUpperBoundry">
+            <x:constraints gridx="4" gridy="4" weighty="0.0" weightx="1.0" width="-1px" height="0px" />
+        </XdevTextField>
+        <XdevLabel x:name="lblSlxFactorFak" value="FAK Beitrag">
+            <x:constraints gridx="1" gridy="5" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevTextField columns="5" tabIndex="5" x:name="txtSlxFactorFak">
+            <x:constraints gridx="2" gridy="5" weighty="0.0" weightx="1.0" width="-1px" height="0px" />
+        </XdevTextField>
+        <XdevLabel x:name="lblSlxSldLowerBoundry" value="Untergrenze SOL">
+            <x:constraints gridx="3" gridy="5" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevTextField columns="5" tabIndex="10" x:name="txtSlxSldLowerBoundry">
+            <x:constraints gridx="4" gridy="5" weighty="0.0" weightx="1.0" width="-1px" height="0px" />
+        </XdevTextField>
+        <XdevLabel x:name="lblSlxFactorAdmin" value="Verwaltungskosten">
+            <x:constraints gridx="1" gridy="6" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevTextField columns="5" tabIndex="6" x:name="txtSlxFactorAdmin">
+            <x:constraints gridx="2" gridy="6" weighty="0.0" weightx="1.0" width="-1px" height="0px" />
+        </XdevTextField>
+        <XdevLabel x:name="lblSlxFactorSol" value="Solidaritätsbeitrag">
+            <x:constraints gridx="1" gridy="7" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <XdevTextField columns="5" tabIndex="7" x:name="txtSlxFactorSol">
+            <x:constraints gridx="2" gridy="7" weighty="0.0" weightx="1.0" width="-1px" height="0px" />
+        </XdevTextField>
+        <XdevLabel x:name="lblSlxState" value="Status">
+            <x:constraints gridx="3" gridy="8" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+        </XdevLabel>
+        <ComboBox tabIndex="11" x:name="comboBoxState">
+            <x:constraints gridx="4" gridy="8" weighty="0.0" weightx="1.0" width="-1px" height="0px" />
+        </ComboBox>
+        <XdevHorizontalLayout x:name="horizontalLayout" margin="l">
+            <x:constraints gridx="2" gridy="9" weighty="0.0" weightx="0.0" width="100%" alignment="TOP_RIGHT" height="0px" />
+            <XdevButton icon="FontAwesome.SAVE" caption="Speichern" tabIndex="13" x:name="cmdSave" x:shortcut="ENTER">
+                <x:constraints weightx="0.0" width="0px" alignment="MIDDLE_RIGHT" height="0px" />
+                <x:event>click.buttonClick</x:event>
+            </XdevButton>
+            <XdevButton icon="FontAwesome.CLOSE" caption="Schliessen" tabIndex="12" x:name="cmdClose" x:shortcut="ESCAPE">
+                <x:constraints weightx="0.0" width="0px" alignment="MIDDLE_RIGHT" height="0px" />
+                <x:event>click.buttonClick</x:event>
+            </XdevButton>
+        </XdevHorizontalLayout>
+    </XdevGridLayout>
+</XdevView>
+

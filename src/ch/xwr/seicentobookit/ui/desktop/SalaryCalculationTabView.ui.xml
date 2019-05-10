@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<?xdevuiml version="1.0"?>
+<?template NONE?>
+<?import ??>
+<?import ch.xwr.seicentobookit.entities.SalaryCalculation?>
+<?import ch.xwr.seicentobookit.entities.SalaryCalculationLine?>
+<?import com.xdev.ui.XdevButton?>
+<?import com.xdev.ui.XdevFieldGroup?>
+<?import com.xdev.ui.XdevGridLayout?>
+<?import com.xdev.ui.XdevHorizontalLayout?>
+<?import com.xdev.ui.XdevHorizontalSplitPanel?>
+<?import com.xdev.ui.XdevLabel?>
+<?import com.xdev.ui.XdevPanel?>
+<?import com.xdev.ui.XdevTabSheet?>
+<?import com.xdev.ui.XdevTextField?>
+<?import com.xdev.ui.XdevVerticalLayout?>
+<?import com.xdev.ui.XdevView?>
+<?import com.xdev.ui.entitycomponent.combobox.XdevComboBox?>
+<?import com.xdev.ui.entitycomponent.table.XdevTable?>
+<?import com.xdev.ui.filter.XdevContainerFilterComponent?>
+<?import java.lang.String?>
+<?import java.util.Date?>
+<XdevView xmlns:x="http://xml.xdev-software.com/xdevuiml" x:name="SalaryCalculationTabView">
+    <x:constraints zpos="0" width="100%" height="100%" />
+    <XdevHorizontalSplitPanel styleName="frozen" x:splitPosition="30.0" x:name="horizontalSplitPanel">
+        <x:constraints zpos="0" width="100%" height="100%" />
+        <XdevVerticalLayout styleName="bar" x:name="verticalLayout" margin="b">
+            <x:constraints splitPos="FIRST" width="100%" height="100%" />
+            <XdevContainerFilterComponent x:searchableProperties="sleName" x:name="containerFilterComponent" x:filterableProperties="sleName,sleState" x:container="table">
+                <x:constraints weighty="0.0" width="98%" height="0%" />
+            </XdevContainerFilterComponent>
+            <XdevHorizontalLayout spacing="false" x:name="actionLayout" margin="">
+                <x:constraints top="-7px" left="1021px" weighty="0.0" width="98%" alignment="MIDDLE_LEFT" height="0px" />
+                <XdevButton icon="WebContent/WEB-INF/resources/images/new1_16.png" description="Neuen Datensatz anlegen" styleName="icon-only" x:name="cmdNew">
+                    <x:constraints weightx="0.0" width="0px" alignment="TOP_RIGHT" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/delete3_16.png" caption="" description="Markierten Datensatz löschen" styleName="icon-only" x:name="cmdDelete">
+                    <x:constraints weightx="0.0" width="0px" alignment="TOP_RIGHT" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/reload2.png" description="Liste neu laden" styleName="icon-only" x:name="cmdReload">
+                    <x:constraints weightx="0.0" width="0px" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/info_small.jpg" styleName="icon-only" x:name="cmdInfo">
+                    <x:constraints weightx="0.0" width="0px" alignment="MIDDLE_LEFT" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+            </XdevHorizontalLayout>
+            <XdevTable x:connectedForm="fieldGroup" columnReorderingAllowed="true" x:name="table" columnCollapsingAllowed="true" x:entity="SalaryCalculation" x:autoQuery="false">
+                <x:entityProperties>
+                    <entry type="String" property="sleName" caption="Name" />
+                    <entry type="short" property="sleState" caption="Status" />
+                    <entry type="String" property="sleDescription" caption="Beschreibung" collapsed="true" />
+                </x:entityProperties>
+                <x:constraints top="-10px" left="1034px" weighty="1.0" width="98%" height="100%" />
+                <x:typeArguments>
+                    <typeArgument type="SalaryCalculation" />
+                </x:typeArguments>
+                <x:data methodName="findAll" />
+                <x:event>valueChange.valueChange</x:event>
+            </XdevTable>
+        </XdevVerticalLayout>
+        <XdevGridLayout spacing="false" x:name="gridLayout" margin="">
+            <x:constraints splitPos="SECOND" width="100%" height="100%" />
+            <XdevTabSheet styleName="framed" x:name="tabSheet" x:selectedTabIndex="0">
+                <x:constraints gridx="1" gridy="1" top="564px" left="1048px" weighty="0.1" weightx="0.1" width="100%" height="100%" />
+                <x:event>selectedTabChange.selectedTabChange</x:event>
+                <XdevPanel tabIndex="0" x:name="panel">
+                    <x:constraints weighty="0.1" width="100%" alignment="MIDDLE_CENTER" height="100%" />
+                    <XdevVerticalLayout caption="Tab" x:name="verticalLayout2">
+                        <x:constraints zpos="0" width="100%" height="100%" />
+                        <XdevGridLayout x:name="form" margin="trl">
+                            <x:constraints weighty="0.1" width="100%" alignment="TOP_LEFT" height="100%" />
+                            <XdevLabel x:name="lblSleName" value="{$lblSleName.value}">
+                                <x:constraints gridx="1" gridy="1" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" required="true" x:name="txtSleName" maxLength="50">
+                                <x:constraints gridx="2" gridy="1" weighty="0.0" weightx="0.2" width="100%" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="lblSleDescription" value="{$lblSleDescription.value}">
+                                <x:constraints gridx="1" gridy="2" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="txtSleDescription">
+                                <x:constraints gridx="2" gridy="2" weighty="0.0" weightx="0.2" width="100%" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="lblSleState" value="{$lblSleState.value}">
+                                <x:constraints gridx="1" gridy="3" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevComboBox x:name="comboBox">
+                                <x:constraints gridx="2" gridy="3" weighty="0.0" weightx="0.2" width="0px" height="0px" />
+                                <x:typeArguments>
+                                    <typeArgument type="?" />
+                                </x:typeArguments>
+                            </XdevComboBox>
+                            <XdevFieldGroup x:name="fieldGroup" x:entityType="SalaryCalculation">
+                                <x:typeArguments>
+                                    <typeArgument type="SalaryCalculation" />
+                                </x:typeArguments>
+                                <x:fields>
+                                    <entry name="txtSleName" property="sleName" />
+                                    <entry name="txtSleDescription" property="sleDescription" />
+                                    <entry name="comboBox" property="sleState" />
+                                </x:fields>
+                            </XdevFieldGroup>
+                        </XdevGridLayout>
+                        <XdevHorizontalLayout spacing="false" x:name="horizontalLayout2" margin="">
+                            <x:constraints weighty="0.0" width="100%" alignment="MIDDLE_LEFT" height="0px" />
+                            <XdevButton icon="FontAwesome.PLUS_CIRCLE" caption="Neu..." x:name="cmdNewLine">
+                                <x:constraints weightx="0.0" width="0px" height="0px" />
+                                <x:event>click.buttonClick</x:event>
+                            </XdevButton>
+                            <XdevButton icon="FontAwesome.EDIT" caption="Edit..." x:name="cmdEditLine">
+                                <x:constraints top="35px" left="-1px" weightx="0.0" width="0px" height="0px" />
+                                <x:event>click.buttonClick</x:event>
+                            </XdevButton>
+                            <XdevButton icon="FontAwesome.ERASER" caption="Löschen" x:name="cmdDeleteLine">
+                                <x:constraints top="71px" left="-1px" weightx="0.0" width="0px" height="0px" />
+                                <x:event>click.buttonClick</x:event>
+                            </XdevButton>
+                        </XdevHorizontalLayout>
+                        <XdevTable x:name="tableLine" x:entity="SalaryCalculationLine" x:autoQuery="false">
+                            <x:entityProperties>
+                                <entry type="Date" property="slxValidFrom" caption="Gültig ab">
+                                    <converter dateStyle="DEFAULT" timeStyle="DEFAULT" currency="default" converterType="STRING_TO_DATE" locale="default" dateFormatType="DATE" />
+                                </entry>
+                                <entry type="double" property="slxFactorAhv" caption="Ahv" />
+                                <entry type="double" property="slxFactorAlv" caption="Alv" />
+                                <entry type="double" property="slxFactorKtg" caption="Ktg" />
+                                <entry type="double" property="slxFactorFak" caption="Fak" />
+                                <entry type="double" property="slxFactorAdmin" caption="Admin" />
+                                <entry type="double" property="slxFactorSol" caption="SOL" />
+                                <entry type="double" property="slxCoordinationAlv" caption="Koord.Lohn" />
+                                <entry type="double" property="slxSldLowerBoundry" caption="SOL UGrenze" />
+                                <entry type="double" property="slxSldUpperBoundry" caption="SOL OGrenze" />
+                            </x:entityProperties>
+                            <x:constraints weighty="0.1" width="100%" alignment="BOTTOM_CENTER" height="100%" />
+                            <x:typeArguments>
+                                <typeArgument type="SalaryCalculationLine" />
+                            </x:typeArguments>
+                            <x:event>itemClick.itemClick</x:event>
+                        </XdevTable>
+                    </XdevVerticalLayout>
+                </XdevPanel>
+            </XdevTabSheet>
+            <XdevHorizontalLayout x:name="horizontalLayout" margin="tbl">
+                <x:constraints gridx="1" gridy="2" top="564px" left="1046px" weighty="0.0" weightx="0.1" width="-1px" alignment="BOTTOM_CENTER" height="-1px" />
+                <XdevButton icon="WebContent/WEB-INF/resources/images/save1.png" caption="{$cmdSave.caption}" x:name="cmdSave" x:shortcut="ENTER">
+                    <x:constraints weightx="0.0" width="0px" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/delete1.png" caption="{$cmdReset.caption}" x:name="cmdReset" x:shortcut="ESCAPE">
+                    <x:constraints weightx="0.0" width="0px" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+            </XdevHorizontalLayout>
+        </XdevGridLayout>
+    </XdevHorizontalSplitPanel>
+</XdevView>
+

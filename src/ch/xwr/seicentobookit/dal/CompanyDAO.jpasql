@@ -1,0 +1,7 @@
+import ch.xwr.seicentobookit.entities.Company
+//import ch.xwr.seicentobookit.business.LovState
+
+findActiveConfig(Enum state)
+{
+	select * from Company where cmpState = :state
+}

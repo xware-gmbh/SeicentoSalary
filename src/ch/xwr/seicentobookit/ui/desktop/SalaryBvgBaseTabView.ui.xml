@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<?xdevuiml version="1.0"?>
+<?template NONE?>
+<?import ch.xwr.seicentobookit.business.LovState.State?>
+<?import ch.xwr.seicentobookit.entities.Employee?>
+<?import ch.xwr.seicentobookit.entities.SalaryBvgBase?>
+<?import ch.xwr.seicentobookit.entities.SalaryBvgBaseLine?>
+<?import com.vaadin.ui.CustomComponent?>
+<?import com.xdev.ui.XdevButton?>
+<?import com.xdev.ui.XdevFieldGroup?>
+<?import com.xdev.ui.XdevGridLayout?>
+<?import com.xdev.ui.XdevHorizontalLayout?>
+<?import com.xdev.ui.XdevHorizontalSplitPanel?>
+<?import com.xdev.ui.XdevLabel?>
+<?import com.xdev.ui.XdevPanel?>
+<?import com.xdev.ui.XdevTabSheet?>
+<?import com.xdev.ui.XdevTextField?>
+<?import com.xdev.ui.XdevVerticalLayout?>
+<?import com.xdev.ui.XdevView?>
+<?import com.xdev.ui.entitycomponent.combobox.XdevComboBox?>
+<?import com.xdev.ui.entitycomponent.table.XdevTable?>
+<?import com.xdev.ui.filter.XdevContainerFilterComponent?>
+<?import java.lang.String?>
+<?import java.util.Date?>
+<XdevView xmlns:x="http://xml.xdev-software.com/xdevuiml" x:name="SalaryBvgBaseTabView">
+    <x:constraints zpos="0" width="100%" height="100%" />
+    <XdevHorizontalSplitPanel x:splitPosition="33.0" x:name="horizontalSplitPanel">
+        <x:constraints zpos="0" width="100%" height="100%" />
+        <XdevVerticalLayout x:name="verticalLayout" margin="">
+            <x:constraints splitPos="FIRST" width="100%" height="100%" />
+            <XdevContainerFilterComponent x:searchableProperties="sbeName" x:name="containerFilterComponent" x:filterableProperties="sbeName,sbeState,sbeCoordinationAmt,sbeSalarydefAmt" x:container="table">
+                <x:constraints weighty="0.0" width="100%" height="0%" />
+            </XdevContainerFilterComponent>
+            <XdevHorizontalLayout spacing="false" x:name="actionLayout" margin="">
+                <x:constraints weighty="0.0" width="0px" alignment="MIDDLE_LEFT" height="0px" />
+                <XdevButton icon="WebContent/WEB-INF/resources/images/new1_16.png" description="Neuen Datensatz anlegen" styleName="icon-only" x:name="cmdNew">
+                    <x:constraints weightx="0.0" width="0px" alignment="MIDDLE_LEFT" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/delete3_16.png" caption="" description="Markierte Zeile löschen" styleName="icon-only" x:name="cmdDelete">
+                    <x:constraints weightx="0.0" width="0px" alignment="MIDDLE_LEFT" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/reload2.png" description="Liste neu laden" styleName="icon-only" x:name="cmdReload">
+                    <x:constraints weightx="0.0" width="0px" alignment="MIDDLE_LEFT" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/info_small.jpg" styleName="icon-only" x:name="cmdInfo">
+                    <x:constraints weightx="0.0" width="0px" alignment="MIDDLE_LEFT" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+            </XdevHorizontalLayout>
+            <XdevTable x:connectedForm="fieldGroup" x:name="table" columnCollapsingAllowed="true" x:entity="SalaryBvgBase" x:autoQuery="false">
+                <x:entityProperties>
+                    <entry type="String" property="sbeName" caption="Name" />
+                    <entry type="short" property="sbeState" caption="Status" />
+                    <entry type="double" property="sbeCoordinationAmt" caption="Koordinationsbetrag" collapsed="true" />
+                    <entry type="double" property="sbeSalarydefAmt" caption="Basislohn" collapsed="true" />
+                </x:entityProperties>
+                <x:constraints weighty="1.0" width="100%" height="100%" />
+                <x:typeArguments>
+                    <typeArgument type="SalaryBvgBase" />
+                </x:typeArguments>
+                <x:data methodName="findAll" />
+                <x:event>valueChange.valueChange</x:event>
+            </XdevTable>
+        </XdevVerticalLayout>
+        <XdevGridLayout x:name="form" margin="r">
+            <x:constraints splitPos="SECOND" weighty="0.0" width="100%" alignment="MIDDLE_CENTER" height="100%" />
+            <XdevTabSheet styleName="framed" x:name="tabSheet" x:selectedTabIndex="0">
+                <x:constraints gridx="1" gridy="1" weighty="1.0" weightx="1.0" width="100%" height="100%" />
+                <XdevPanel caption="Details" tabIndex="0" x:name="data" scrollTop="1">
+                    <x:constraints width="100%" height="100%" />
+                    <XdevVerticalLayout caption="Tab" x:name="verticalLayout3" margin="rbl">
+                        <x:constraints zpos="0" width="100%" height="100%" />
+                        <XdevGridLayout caption="" x:name="gridLayout2">
+                            <x:constraints weighty="0.0" width="100%" height="0px" />
+                            <XdevLabel x:name="label" value="{$label.value}">
+                                <x:constraints gridx="1" gridy="1" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" required="true" x:name="textField" maxLength="50">
+                                <x:constraints gridx="2" gridy="1" weighty="0.0" weightx="0.1" width="100%" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="label2" value="{$label2.value}">
+                                <x:constraints gridx="1" gridy="2" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textField2">
+                                <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                <x:constraints gridx="2" gridy="2" weighty="0.0" weightx="0.1" width="0px" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="label3" value="{$label3.value}">
+                                <x:constraints gridx="1" gridy="3" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textField3">
+                                <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                <x:constraints gridx="2" gridy="3" weighty="0.0" weightx="0.1" width="0px" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="label12" value="{$label12.value}">
+                                <x:constraints gridx="1" gridy="4" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevComboBox x:name="comboBox">
+                                <x:constraints gridx="2" gridy="4" weighty="0.0" weightx="0.1" width="0px" height="0px" />
+                                <x:typeArguments>
+                                    <typeArgument type="CustomComponent" />
+                                </x:typeArguments>
+                            </XdevComboBox>
+                            <XdevFieldGroup x:name="fieldGroup" x:entityType="SalaryBvgBase">
+                                <x:typeArguments>
+                                    <typeArgument type="SalaryBvgBase" />
+                                </x:typeArguments>
+                                <x:fields>
+                                    <entry name="textField" property="sbeName" />
+                                    <entry name="textField2" property="sbeCoordinationAmt" />
+                                    <entry name="textField3" property="sbeSalarydefAmt" />
+                                    <entry name="comboBox" property="sbeState" />
+                                </x:fields>
+                            </XdevFieldGroup>
+                        </XdevGridLayout>
+                        <XdevHorizontalLayout spacing="false" x:name="horizontalLayoutLine2" margin="r">
+                            <x:constraints weighty="0.0" width="100%" alignment="TOP_LEFT" height="0px" />
+                            <XdevButton icon="FontAwesome.PLUS_CIRCLE" caption="New..." x:name="cmdNewLine">
+                                <x:constraints weightx="0.0" width="0px" height="0px" />
+                                <x:event>click.buttonClick</x:event>
+                            </XdevButton>
+                            <XdevButton icon="FontAwesome.EDIT" caption="Edit..." x:name="cmdEditLine">
+                                <x:constraints top="35px" left="-1px" weightx="0.0" width="0px" height="0px" />
+                                <x:event>click.buttonClick</x:event>
+                            </XdevButton>
+                            <XdevButton icon="FontAwesome.ERASER" caption="Löschen" x:name="cmdDeleteLine">
+                                <x:constraints top="71px" left="-1px" weightx="0.0" width="0px" height="0px" />
+                                <x:event>click.buttonClick</x:event>
+                            </XdevButton>
+                        </XdevHorizontalLayout>
+                        <XdevTable x:connectedForm="" x:masterComponent="" x:name="tableLine" columnCollapsingAllowed="true" x:entity="SalaryBvgBaseLine" x:autoQuery="false">
+                            <x:entityProperties>
+                                <entry type="Date" property="sbxValidFrom" caption="Gültig ab">
+                                    <converter dateStyle="DEFAULT" timeStyle="DEFAULT" currency="default" converterType="STRING_TO_DATE" locale="default" dateFormatType="DATE" />
+                                </entry>
+                                <entry type="int" property="sbxAgeStartYear" caption="Alter (JJ) ab" />
+                                <entry type="double" property="sbxCompany" caption="Arbeitgeber" alignment="RIGHT">
+                                    <converter numberType="Double" numberFormatType="number" minimumFractionDigits="3" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                </entry>
+                                <entry type="double" property="sbxWorker" caption="Arbeitnehmer" alignment="RIGHT">
+                                    <converter numberType="Double" numberFormatType="number" minimumFractionDigits="3" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                </entry>
+                                <entry type="State" property="sbxState" caption="Status" />
+                            </x:entityProperties>
+                            <x:constraints weighty="1.0" width="100%" height="100%" />
+                            <x:typeArguments>
+                                <typeArgument type="SalaryBvgBaseLine" />
+                            </x:typeArguments>
+                            <x:event>valueChange.valueChange</x:event>
+                            <x:event>itemClick.itemClick</x:event>
+                        </XdevTable>
+                    </XdevVerticalLayout>
+                </XdevPanel>
+                <XdevPanel caption="Referenzen" tabIndex="0" x:name="relation">
+                    <x:constraints width="100%" height="100%" />
+                    <XdevVerticalLayout caption="" x:name="verticalLayout2">
+                        <x:constraints zpos="0" width="100%" height="100%" />
+                        <XdevTable x:masterComponent="table" x:name="table2" x:entity="Employee" x:autoQuery="false">
+                            <x:entityProperties>
+                                <entry type="long" property="empNumber" caption="Nummer" />
+                                <entry type="String" property="empLastName" caption="Name" />
+                                <entry type="String" property="empFirstName" caption="Vorname" />
+                                <entry type="String" property="empAddress" caption="Adresse" />
+                                <entry type="String" property="empZip" caption="PLZ" />
+                                <entry type="String" property="empPlace" caption="Ort" />
+                                <entry type="State" property="empState" caption="Status" />
+                            </x:entityProperties>
+                            <x:constraints weighty="1.0" width="100%" height="100%" />
+                            <x:typeArguments>
+                                <typeArgument type="Employee" />
+                            </x:typeArguments>
+                        </XdevTable>
+                    </XdevVerticalLayout>
+                </XdevPanel>
+            </XdevTabSheet>
+            <XdevHorizontalLayout x:name="horizontalLayout" margin="l">
+                <x:constraints gridx="1" gridy="2" weighty="0.0" weightx="0.0" width="0px" alignment="BOTTOM_CENTER" height="0px" />
+                <XdevButton icon="WebContent/WEB-INF/resources/images/save1.png" caption="{$cmdSave.caption}" x:name="cmdSave" x:shortcut="ENTER">
+                    <x:constraints weightx="0.0" width="0px" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/delete1.png" caption="{$cmdReset.caption}" x:name="cmdReset" x:shortcut="ESCAPE">
+                    <x:constraints weightx="0.0" width="0px" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+            </XdevHorizontalLayout>
+        </XdevGridLayout>
+    </XdevHorizontalSplitPanel>
+</XdevView>
+

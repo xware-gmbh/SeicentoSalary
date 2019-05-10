@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="SeicentoBookIt">
+		<provider>
+			org.hibernate.jpa.HibernatePersistenceProvider
+		</provider>
+		<!-- <class>ch.xwr.seicentobookit.entities.Vat</class>  -->
+		<class>ch.xwr.seicentobookit.entities.RowObject</class>
+		<class>ch.xwr.seicentobookit.entities.SalaryCalculation</class>
+		<class>ch.xwr.seicentobookit.entities.SalaryCalculationLine</class>
+		<class>ch.xwr.seicentobookit.entities.WorkRole</class>
+		<class>ch.xwr.seicentobookit.entities.RowRelation</class>
+		<class>ch.xwr.seicentobookit.entities.RowFile</class>
+		<class>ch.xwr.seicentobookit.entities.Salary</class>
+		<class>ch.xwr.seicentobookit.entities.Bank</class>
+		<class>ch.xwr.seicentobookit.entities.RowText</class>
+		<class>ch.xwr.seicentobookit.entities.CostAccount</class>
+		<class>ch.xwr.seicentobookit.entities.Employee</class>
+		<class>ch.xwr.seicentobookit.entities.SalaryBvgBase</class>
+		<class>ch.xwr.seicentobookit.entities.SalaryBvgBaseLine</class>
+		<class>ch.xwr.seicentobookit.entities.RowParameter</class>
+		<class>ch.xwr.seicentobookit.entities.RowSecurity</class>
+		<class>ch.xwr.seicentobookit.entities.Language</class>
+		<class>ch.xwr.seicentobookit.entities.RowEntity</class>
+		<class>ch.xwr.seicentobookit.entities.Company</class>
+		<class>ch.xwr.seicentobookit.entities.DatabaseVersion</class>
+		<class>ch.xwr.seicentobookit.entities.RowLabel</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="" />
+			<property name="javax.persistence.sharedCache.mode"
+				value="DISABLE_SELECTIVE" />
+			<property name="hibernate.cache.use_query_cache"
+				value="true" />
+			<property name="hibernate.archive.autodetection" value="" />
+			<property name="hibernate.cache.use_second_level_cache"
+				value="true" />
+			<property name="hibernate.transaction.auto_close_session"
+				value="false" />
+				
+			<!-- local Database -->
+			<!-- 
+ 			-->
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:sqlserver://localhost:1433;databaseName=devsalary" />
+			<property name="javax.persistence.jdbc.password"
+				value="usrseicento" />
+				
+			<property name="javax.persistence.jdbc.user"
+				value="usrseicento" />
+ 							 			
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.SQLServer2012Dialect" />
+				
+			<property name="hibernate.show_sql" value="false" />
+			<!--  <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.EhCacheRegionFactory" /> -->
+			<property name="hibernate.cache.region.factory_class"
+				value="org.hibernate.cache.jcache.JCacheRegionFactory" />
+
+			<property name="javax.persistence.jdbc.driver"
+				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+			<!-- <property name="hibernate.id.new_generator_mappings" value="false" />  -->
+			<property name="hibernate.c3p0.timeout" value="3000" />
+			<property name="hibernate.id.new_generator_mappings"
+				value="false" />
+			<property name="hibernate.c3p0.max_size" value="100" />
+			<property name="hibernate.c3p0.idle_test_period"
+				value="300" />
+			<property name="hibernate.c3p0.max_statements" value="50" />
+			<property name="hibernate.c3p0.min_size" value="1" />
+		</properties>
+	</persistence-unit>
+</persistence>

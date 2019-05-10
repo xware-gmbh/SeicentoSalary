@@ -1,0 +1,13 @@
+import ch.xwr.seicentobookit.entities.SalaryCalculation
+import ch.xwr.seicentobookit.entities.SalaryCalculationLine
+import java.util.Date
+
+findByHeader(SalaryCalculation dao)
+{
+	select * from SalaryCalculationLine where salaryCalculation = :dao order by slxValidFrom desc
+}
+
+findByHeaderAndDate(SalaryCalculation dao, Date salaryDate)
+{
+	select * from SalaryCalculationLine where salaryCalculation = :dao and slxValidFrom <= :salaryDate order by slxValidFrom desc
+}

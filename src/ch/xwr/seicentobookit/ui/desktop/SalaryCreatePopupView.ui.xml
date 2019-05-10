@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<?xdevuiml version="1.0"?>
+<?template NONE?>
+<?import com.xdev.ui.XdevAbsoluteLayout?>
+<?import com.xdev.ui.XdevButton?>
+<?import com.xdev.ui.XdevCheckBox?>
+<?import com.xdev.ui.XdevLabel?>
+<?import com.xdev.ui.XdevPopupDateField?>
+<?import com.xdev.ui.XdevView?>
+<XdevView xmlns:x="http://xml.xdev-software.com/xdevuiml" x:name="SalaryCreatePopupView">
+    <x:constraints zpos="0" width="100%" height="100%" />
+    <XdevAbsoluteLayout x:name="absoluteLayout">
+        <x:constraints zpos="0" width="100%" height="100%" />
+        <XdevLabel x:name="label" value="Datum neue Lohnzahlung">
+            <x:constraints top="68px" left="10px" />
+        </XdevLabel>
+        <XdevPopupDateField required="true" x:name="popupDateField">
+            <x:constraints top="60px" left="356px" />
+        </XdevPopupDateField>
+        <XdevButton caption="Erstellen" x:name="btnCreate">
+            <x:constraints top="141px" left="87px" />
+            <x:event>click.buttonClick</x:event>
+        </XdevButton>
+        <XdevButton caption="Abbrechen" x:name="btnCancel">
+            <x:constraints top="141px" left="212px" />
+            <x:event>click.buttonClick</x:event>
+        </XdevButton>
+        <XdevLabel styleName="bold" x:name="label2" value="Lohndaten generieren für aktive Mitarbeiter">
+            <x:constraints top="20px" left="10px" width="359px" height="21px" />
+        </XdevLabel>
+        <XdevLabel x:name="label3" value="Bruttolohn von letztem Lohn übernehmen">
+            <x:constraints top="99px" left="10px" />
+        </XdevLabel>
+        <XdevCheckBox x:name="cbxLastSalary" value="true">
+            <x:constraints top="104px" left="358px" />
+        </XdevCheckBox>
+    </XdevAbsoluteLayout>
+</XdevView>
+

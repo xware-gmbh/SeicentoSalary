@@ -1,0 +1,7 @@
+import ch.xwr.seicentobookit.entities.RowEntity
+import ch.xwr.seicentobookit.entities.RowObject
+
+findObjectBase(RowEntity ent, long id)
+{
+	select * from RowObject where objRowId = :id and rowEntity = :ent
+}

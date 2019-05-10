@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<?xdevuiml version="1.0"?>
+<?template NONE?>
+<?import ch.xwr.seicentobookit.entities.Employee?>
+<?import ch.xwr.seicentobookit.entities.Salary?>
+<?import ch.xwr.seicentobookit.entities.Salary.SalaryType?>
+<?import com.vaadin.ui.CustomComponent?>
+<?import com.xdev.ui.XdevButton?>
+<?import com.xdev.ui.XdevFieldGroup?>
+<?import com.xdev.ui.XdevGridLayout?>
+<?import com.xdev.ui.XdevHorizontalLayout?>
+<?import com.xdev.ui.XdevHorizontalSplitPanel?>
+<?import com.xdev.ui.XdevLabel?>
+<?import com.xdev.ui.XdevPanel?>
+<?import com.xdev.ui.XdevPopupDateField?>
+<?import com.xdev.ui.XdevTabSheet?>
+<?import com.xdev.ui.XdevTextField?>
+<?import com.xdev.ui.XdevVerticalLayout?>
+<?import com.xdev.ui.XdevView?>
+<?import com.xdev.ui.entitycomponent.combobox.XdevComboBox?>
+<?import com.xdev.ui.entitycomponent.table.XdevTable?>
+<?import com.xdev.ui.filter.XdevContainerFilterComponent?>
+<?import java.lang.Double?>
+<?import java.lang.String?>
+<?import java.util.Date?>
+<XdevView xmlns:x="http://xml.xdev-software.com/xdevuiml" x:name="SalaryTabView">
+    <x:constraints zpos="0" width="100%" height="100%" />
+    <XdevHorizontalSplitPanel x:splitPosition="40.0" x:name="horizontalSplitPanel">
+        <x:constraints zpos="0" width="100%" height="100%" />
+        <XdevVerticalLayout x:name="verticalLayout" margin="b">
+            <x:constraints splitPos="FIRST" width="100%" height="100%" />
+            <XdevContainerFilterComponent x:searchableProperties="employee.empLastName,employee.empFirstName,employee.empCostAccount,slrRemark" description="Filter" x:name="containerFilterComponent" x:filterableProperties="slrYear,slrDate,slrType,slrSalaryBase,slrPayDate,slrState,employee" captionAsHtml="true" x:container="table">
+                <x:constraints weighty="0.0" width="100%" alignment="TOP_RIGHT" height="0%" />
+            </XdevContainerFilterComponent>
+            <XdevHorizontalLayout spacing="false" x:name="actionLayout" margin="">
+                <x:constraints weighty="0.0" width="98%" alignment="TOP_CENTER" height="0px" />
+                <XdevButton icon="WebContent/WEB-INF/resources/images/new1_16.png" description="Neuen Datensatz anlegen" styleName="icon-only" x:name="cmdNew">
+                    <x:constraints weightx="0.0" width="0px" alignment="TOP_RIGHT" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/delete3_16.png" caption="" description="Markierten Datensatz löschen" styleName="icon-only" x:name="cmdDelete">
+                    <x:constraints weightx="0.0" width="0px" alignment="TOP_RIGHT" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/reload2.png" description="Liste neu laden" styleName="icon-only" x:name="cmdReload">
+                    <x:constraints weightx="0.0" width="0px" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/copy1_16.png" caption="..." description="generiert neue Lohndatensätze" styleName="icon-only" x:name="cmdGenerate">
+                    <x:constraints weighty="0.0" weightx="0.0" width="0px" alignment="TOP_RIGHT" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/Printer_black_18.png" description="Lohnblatt drucken" styleName="icon-only" x:name="cmdReport">
+                    <x:constraints weightx="0.0" width="0px" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/info_small.jpg" styleName="icon-only" x:name="cmdInfo">
+                    <x:constraints weightx="0.0" width="0px" alignment="MIDDLE_LEFT" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+            </XdevHorizontalLayout>
+            <XdevTable x:connectedForm="fieldGroup" x:name="table" pageLength="14" columnCollapsingAllowed="true" x:entity="Salary">
+                <x:entityProperties>
+                    <entry type="Date" property="slrDate" caption="Datum">
+                        <converter dateStyle="DEFAULT" timeStyle="DEFAULT" pattern="YYYY MMMM" currency="default" converterType="STRING_TO_DATE" locale="default" dateFormatType="DATE" />
+                    </entry>
+                    <entry type="String" property="employee.empLastName" caption="Name" />
+                    <entry type="String" property="employee.empFirstName" caption="Vorname" />
+                    <entry type="String" property="employee.empAddress" caption="Adresse" collapsed="true" />
+                    <entry type="String" property="employee.empZip" caption="PLZ" collapsed="true" />
+                    <entry type="String" property="employee.empPlace" caption="Ort" collapsed="true" />
+                    <entry type="SalaryType" property="slrType" caption="Lohnart" />
+                    <entry type="Double" property="slrBirthAddon" caption="+/-" collapsed="true">
+                        <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                    </entry>
+                    <entry type="double" property="slrKidsAdditon" caption="Kinderzulage" collapsed="true">
+                        <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                    </entry>
+                    <entry type="double" property="slrSalaryNet" caption="Nettolohn" collapsed="true">
+                        <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                    </entry>
+                    <entry type="double" property="slrSalaryBase" caption="Bruttolohn" alignment="RIGHT">
+                        <converter numberType="Double" numberFormatType="currency" minimumFractionDigits="2" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                    </entry>
+                    <entry type="Date" property="employee.empBirthday" caption="Geburtstag" collapsed="true">
+                        <converter dateStyle="DEFAULT" timeStyle="DEFAULT" currency="default" converterType="STRING_TO_DATE" locale="default" dateFormatType="DATE" />
+                    </entry>
+                    <entry type="Date" property="employee.empStartwork" caption="Anstellungsbeginn" collapsed="true">
+                        <converter dateStyle="DEFAULT" timeStyle="DEFAULT" currency="default" converterType="STRING_TO_DATE" locale="default" dateFormatType="DATE" />
+                    </entry>
+                </x:entityProperties>
+                <x:constraints weighty="1.0" width="98%" height="100%" />
+                <x:typeArguments>
+                    <typeArgument type="Salary" />
+                </x:typeArguments>
+                <x:data methodName="findAll" />
+                <x:event>itemClick.itemClick</x:event>
+                <x:event>valueChange.valueChange</x:event>
+            </XdevTable>
+        </XdevVerticalLayout>
+        <XdevGridLayout x:name="form" margin="b">
+            <x:constraints splitPos="SECOND" width="100%" height="100%" />
+            <XdevFieldGroup x:name="fieldGroup" x:entityType="Salary">
+                <x:typeArguments>
+                    <typeArgument type="Salary" />
+                </x:typeArguments>
+                <x:fields>
+                    <entry name="popupDateFieldSalary" property="slrDate" />
+                    <entry name="comboBoxEmployee" property="employee" />
+                    <entry name="textField" property="slrRemark" />
+                    <entry name="textFieldSalaryBrut" property="slrSalaryBase" />
+                    <entry name="textFieldSalaryNet" property="slrSalaryNet" />
+                    <entry name="popupDateFieldPayDate" property="slrPayDate" />
+                    <entry name="comboBoxType" property="slrType" />
+                    <entry name="comboBoxState" property="slrState" />
+                    <entry name="textFieldKidsAddon" property="slrKidsAdditon" />
+                    <entry name="textField14" property="slrAmountSourceTax" />
+                    <entry name="textFieldBaseAlv" property="slrBaseAlv" />
+                    <entry name="textFieldBaseBvg" property="slrBaseBvg" />
+                    <entry name="textFieldBaseSol" property="slrBaseSol" />
+                    <entry name="textFieldAddonGeneral" property="slrBirthAddon" />
+                    <entry name="textAmtAhv" property="slrAmountAhv" />
+                    <entry name="textAmtAlv" property="slrAmountAlv" />
+                    <entry name="textAmtBvg1" property="slrAmountBvg" />
+                    <entry name="textAmtFak" property="slrAmountFak" />
+                    <entry name="textAmtSol" property="slrAmountSol" />
+                    <entry name="textAmtAdmin" property="slrAmountAdminfees" />
+                    <entry name="textFieldFactorAhv" property="slrFactorAhv" />
+                    <entry name="textFieldFactorAlv" property="slrFactorAlv" />
+                    <entry name="textFieldFactorFak" property="slrFactorFak" />
+                    <entry name="textFieldFactorSol" property="slrFactorSol" />
+                    <entry name="textFieldFactorAdmin" property="slrFactorAdmin" />
+                    <entry name="textAmtBvgEmp" property="slrAmountBvgEmp" />
+                </x:fields>
+            </XdevFieldGroup>
+            <XdevTabSheet styleName="framed" x:name="tabSheet" x:selectedTabIndex="0">
+                <x:constraints borderPos="CENTER" gridx="1" gridy="1" weighty="1.0" weightx="1.0" width="100%" height="100%" />
+                <XdevGridLayout caption="{$gridLayout.caption}" x:name="gridLayout">
+                    <XdevLabel x:name="label" value="{$label.value}">
+                        <x:constraints gridx="1" gridy="1" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                    </XdevLabel>
+                    <XdevPopupDateField x:name="popupDateFieldSalary">
+                        <x:constraints gridx="2" gridy="1" weighty="0.0" weightx="0.3" width="0px" height="0px" />
+                    </XdevPopupDateField>
+                    <XdevLabel x:name="label6" value="{$label6.value}">
+                        <x:constraints gridx="3" gridy="1" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                    </XdevLabel>
+                    <XdevPopupDateField x:name="popupDateFieldPayDate">
+                        <x:constraints gridx="4" gridy="1" weighty="0.0" weightx="0.5" width="0px" height="0px" />
+                    </XdevPopupDateField>
+                    <XdevLabel x:name="label2" value="{$label2.value}">
+                        <x:constraints gridx="1" gridy="2" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                    </XdevLabel>
+                    <XdevComboBox required="true" itemCaptionFromAnnotation="false" x:name="comboBoxEmployee" x:entity="Employee">
+                        <x:constraints gridx="2" gridy="2" weighty="0.0" weightx="0.3" width="100%" height="0px" />
+                        <x:entityProperty>
+                            <entry type="String" property="caption" />
+                        </x:entityProperty>
+                        <x:typeArguments>
+                            <typeArgument type="Employee" />
+                        </x:typeArguments>
+                        <x:data methodName="findAll" />
+                        <x:event>valueChange.valueChange</x:event>
+                    </XdevComboBox>
+                    <XdevLabel x:name="label3" value="{$label3.value}">
+                        <x:constraints gridx="1" gridy="3" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                    </XdevLabel>
+                    <XdevTextField columns="5" x:name="textField" maxLength="128">
+                        <x:constraints gridx="2" gridy="3" weighty="0.0" weightx="0.3" width="100%" gridWidth="2" height="0px" />
+                    </XdevTextField>
+                    <XdevLabel x:name="label4" value="{$label4.value}">
+                        <x:constraints gridx="1" gridy="4" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                    </XdevLabel>
+                    <XdevTextField columns="5" required="true" x:name="textFieldSalaryBrut">
+                        <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                        <x:constraints gridx="2" gridy="4" weighty="0.0" weightx="0.3" width="100%" height="0px" />
+                        <x:event>blur.blur</x:event>
+                        <x:event>textChange.textChange</x:event>
+                    </XdevTextField>
+                    <XdevLabel x:name="label5" value="{$label5.value}">
+                        <x:constraints gridx="3" gridy="4" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                    </XdevLabel>
+                    <XdevTextField columns="5" styleName="borderless large dark" enabled="false" x:name="textFieldSalaryNet" readOnly="true">
+                        <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                        <x:constraints gridx="4" gridy="4" weighty="0.0" weightx="0.5" width="100%" height="0px" />
+                    </XdevTextField>
+                    <XdevLabel x:name="label25" value="{$label25.value}">
+                        <x:constraints gridx="1" gridy="5" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                    </XdevLabel>
+                    <XdevComboBox x:name="comboBoxType" nullSelectionAllowed="false">
+                        <x:constraints gridx="2" gridy="5" weighty="0.0" weightx="0.3" width="0px" height="0px" />
+                        <x:typeArguments>
+                            <typeArgument type="CustomComponent" />
+                        </x:typeArguments>
+                        <x:event>valueChange.valueChange</x:event>
+                    </XdevComboBox>
+                    <XdevLabel x:name="label26" value="{$label26.value}">
+                        <x:constraints gridx="3" gridy="5" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                    </XdevLabel>
+                    <XdevComboBox x:name="comboBoxState" nullSelectionAllowed="false">
+                        <x:constraints gridx="4" gridy="5" weighty="0.0" weightx="0.5" width="0px" height="0px" />
+                        <x:typeArguments>
+                            <typeArgument type="CustomComponent" />
+                        </x:typeArguments>
+                    </XdevComboBox>
+                    <XdevPanel caption="Basisbeträge" tabIndex="0" x:name="panel">
+                        <x:constraints gridx="1" gridy="6" weighty="0.0" weightx="0.0" width="100%" gridWidth="4" height="0px" />
+                        <XdevHorizontalLayout x:name="horizontalLayout2" margin="b">
+                            <x:constraints gridHeight="1" gridx="1" zpos="0" gridy="6" weighty="0.0" weightx="0.0" width="100%" alignment="TOP_LEFT" gridWidth="4" height="-1px" />
+                            <XdevLabel x:name="label7" value="{$label7.value}">
+                                <x:constraints gridHeight="1" gridx="1" gridy="2" weighty="0.0" weightx="0.0" width="0px" alignment="TOP_LEFT" gridWidth="1" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textFieldBaseAlv">
+                                <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                <x:constraints gridHeight="1" gridx="2" gridy="2" weighty="0.0" weightx="1.0" width="100%" alignment="TOP_LEFT" gridWidth="1" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="label8" value="{$label8.value}">
+                                <x:constraints gridHeight="1" gridx="1" gridy="3" weighty="0.0" weightx="0.0" width="0px" alignment="TOP_LEFT" gridWidth="1" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textFieldBaseBvg">
+                                <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                <x:constraints gridHeight="1" gridx="2" gridy="3" weighty="0.0" weightx="1.0" width="100%" alignment="TOP_LEFT" gridWidth="1" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="label9" value="{$label9.value}">
+                                <x:constraints gridHeight="1" gridx="1" gridy="4" weighty="0.0" weightx="0.0" width="0px" alignment="TOP_LEFT" gridWidth="1" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textFieldBaseSol">
+                                <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                <x:constraints gridHeight="1" gridx="2" gridy="4" weighty="0.0" weightx="1.0" width="100%" alignment="TOP_LEFT" gridWidth="1" height="0px" />
+                            </XdevTextField>
+                        </XdevHorizontalLayout>
+                    </XdevPanel>
+                    <XdevPanel caption="Zu-/Abschläge" tabIndex="0" x:name="panelZuAb">
+                        <x:constraints gridx="1" gridy="7" weighty="0.0" weightx="0.0" width="100%" gridWidth="4" height="0px" />
+                        <XdevGridLayout x:name="gridLayout4" margin="rb">
+                            <x:constraints zpos="0" width="100%" height="100%" />
+                            <XdevLabel x:name="label10" value="{$label10.value}">
+                                <x:constraints gridx="1" gridy="1" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textFieldKidsAddon">
+                                <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                <x:constraints gridx="2" gridy="1" weighty="0.0" weightx="0.1" width="0px" height="0px" />
+                                <x:event>blur.blur</x:event>
+                            </XdevTextField>
+                            <XdevLabel x:name="label17" value="{$label17.value}">
+                                <x:constraints gridx="3" gridy="1" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textField14">
+                                <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                <x:constraints gridx="4" gridy="1" weighty="0.0" weightx="0.1" width="0px" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="label18" value="{$label18.value}">
+                                <x:constraints gridx="1" gridy="2" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textFieldAddonGeneral">
+                                <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                <x:constraints gridx="2" gridy="2" weighty="0.0" weightx="0.1" width="0px" height="0px" />
+                                <x:event>blur.blur</x:event>
+                            </XdevTextField>
+                        </XdevGridLayout>
+                    </XdevPanel>
+                </XdevGridLayout>
+                <XdevGridLayout caption="{$gridLayout2.caption}" x:name="gridLayout2">
+                    <XdevLabel x:name="label13" value="{$label13.value}">
+                        <x:constraints gridx="1" gridy="1" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                    </XdevLabel>
+                    <XdevTextField columns="5" x:name="textAmtBvg1">
+                        <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                        <x:constraints gridx="2" gridy="1" weighty="0.0" weightx="0.1" width="0px" height="0px" />
+                    </XdevTextField>
+                    <XdevLabel x:name="label24" value="{$label24.value}">
+                        <x:constraints gridx="1" gridy="2" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                    </XdevLabel>
+                    <XdevTextField columns="5" x:name="textAmtBvgEmp">
+                        <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                        <x:constraints gridx="2" gridy="2" weighty="0.0" weightx="0.1" width="0px" height="0px" />
+                    </XdevTextField>
+                    <XdevPanel caption="Beträge Ausgleichskasse" x:name="panelAhv">
+                        <x:constraints gridx="1" gridy="3" weighty="0.0" weightx="0.0" width="0px" gridWidth="2" height="0px" />
+                        <XdevGridLayout x:name="gridLayout5" margin="rb">
+                            <x:constraints zpos="0" width="-1px" height="-1px" />
+                            <XdevLabel x:name="label11" value="{$label11.value}">
+                                <x:constraints gridx="1" gridy="1" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textAmtAhv">
+                                <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                <x:constraints gridx="2" gridy="1" weighty="0.0" weightx="0.05" width="0px" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="label12" value="{$label12.value}">
+                                <x:constraints gridx="1" gridy="2" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textAmtAlv">
+                                <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                <x:constraints gridx="2" gridy="2" weighty="0.0" weightx="0.05" width="0px" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="label15" value="{$label15.value}">
+                                <x:constraints gridx="1" gridy="3" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textAmtSol">
+                                <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                <x:constraints gridx="2" gridy="3" weighty="0.0" weightx="0.05" width="0px" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel styleName="colored bold" x:name="label19" value="Arbeitgeber">
+                                <x:constraints gridx="1" gridy="4" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevLabel x:name="label16" value="{$label16.value}">
+                                <x:constraints gridx="1" gridy="5" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textAmtAdmin">
+                                <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                <x:constraints gridx="2" gridy="5" weighty="0.0" weightx="0.05" width="0px" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="label14" value="{$label14.value}">
+                                <x:constraints gridx="1" gridy="6" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textAmtFak">
+                                <converter numberType="Double" numberFormatType="currency" currency="default" converterType="STRING_TO_NUMBER" locale="default" />
+                                <x:constraints gridx="2" gridy="6" weighty="0.0" weightx="0.05" width="0px" height="0px" />
+                            </XdevTextField>
+                        </XdevGridLayout>
+                    </XdevPanel>
+                    <XdevPanel caption="Ansätze %" x:name="panelFactor">
+                        <x:constraints gridx="3" gridy="3" weighty="0.0" weightx="0.2" width="0px" height="0px" />
+                        <XdevGridLayout x:name="gridLayout3" margin="rb">
+                            <x:constraints zpos="0" width="-1px" height="-1px" />
+                            <XdevLabel x:name="label27" value="{$label19.value}">
+                                <x:constraints gridx="1" gridy="1" top="33px" left="-1px" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textFieldFactorAhv">
+                                <x:constraints gridx="2" gridy="1" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="label20" value="{$label20.value}">
+                                <x:constraints gridx="1" gridy="2" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textFieldFactorAlv">
+                                <x:constraints gridx="2" gridy="2" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="label21" value="{$label21.value}">
+                                <x:constraints gridx="1" gridy="3" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textFieldFactorFak">
+                                <x:constraints gridx="2" gridy="3" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="label23" value="{$label23.value}">
+                                <x:constraints gridx="1" gridy="4" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textFieldFactorAdmin">
+                                <x:constraints gridx="2" gridy="4" top="9px" left="-1px" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevTextField>
+                            <XdevLabel x:name="label22" value="{$label22.value}">
+                                <x:constraints gridx="1" gridy="5" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevLabel>
+                            <XdevTextField columns="5" x:name="textFieldFactorSol">
+                                <x:constraints gridx="2" gridy="5" weighty="0.0" weightx="0.0" width="0px" height="0px" />
+                            </XdevTextField>
+                        </XdevGridLayout>
+                    </XdevPanel>
+                </XdevGridLayout>
+            </XdevTabSheet>
+            <XdevHorizontalLayout x:name="horizontalLayout" margin="rl">
+                <x:constraints borderPos="SOUTH" gridx="1" gridy="2" weighty="0.0" weightx="0.0" width="0px" alignment="MIDDLE_CENTER" height="0px" />
+                <XdevButton icon="WebContent/WEB-INF/resources/images/save1.png" caption="{$cmdSave.caption}" description="Datensatz speichern" x:name="cmdSave">
+                    <x:constraints gridHeight="1" gridx="1" gridy="2" weighty="0.0" weightx="0.0" width="0px" gridWidth="1" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/delete1.png" caption="{$cmdReset.caption}" description="macht die letzten Änderungen rückgängig" x:name="cmdReset">
+                    <x:constraints weightx="0.0" width="0px" alignment="MIDDLE_RIGHT" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+                <XdevButton icon="WebContent/WEB-INF/resources/images/work1.png" caption="Neu berechnen" description="macht die letzten Änderungen rückgängig" x:name="cmdCalc">
+                    <x:constraints top="35px" left="-1px" weightx="0.0" width="0px" alignment="MIDDLE_RIGHT" height="0px" />
+                    <x:event>click.buttonClick</x:event>
+                </XdevButton>
+            </XdevHorizontalLayout>
+        </XdevGridLayout>
+    </XdevHorizontalSplitPanel>
+</XdevView>
+

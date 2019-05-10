@@ -1,0 +1,12 @@
+import ch.xwr.seicentobookit.entities.Employee
+import ch.xwr.seicentobookit.entities.Salary
+import java.util.Date
+getEmployeeSalaries(Employee emp, int year, Date sDate)
+{
+	select * from Salary where slrYear = :year and slrDate < :sDate and employee = :emp  order by slrDate desc
+}
+
+findByBookingDate(Date boDate)
+{
+	select * from Salary where slrPayDate = :boDate
+}
