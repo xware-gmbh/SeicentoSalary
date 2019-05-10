@@ -7,7 +7,7 @@ ENV SALARY_VERSION 2.0.2
 
 #Provision Webapp	
 RUN set -x && \
-    wget https://github.com/jmurighub/SeicentoSalary/releases/download/v${SALARY_VERSION}/SeicentoSalary.war -O SeicentoSalary.war
+    wget https://github.com/jmurighub/SeicentoSalary/releases/download/${SALARY_VERSION}/SeicentoSalary.war -O SeicentoSalary.war
     
 ADD ./SeicentoSalary.war $CATALINA_HOME/webapps/
 
