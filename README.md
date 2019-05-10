@@ -1,7 +1,7 @@
-#SeicentoSalary
+# SeicentoSalary
 SeicentoSalary ist eine Weblösung für die Verwaltung von Lohnzahlungen nach Schweizer Recht.
 
-##Toolstack
+## Toolstack
 Folgende technische Komponenten kommen zum Einsatz
 * [Rapidclipse IDE (Eclipse basiert) für Java](http://rapidclipse.com)
 * [Tomcat 8.5](https://tomcat.apache.org/download-80.cgi)
@@ -18,7 +18,7 @@ Die Sourcen sind auf [Github](https://github.com/jmurighub/SeicentoSalary) unter
 # Dockerhub
 Ein Image kann von [Dockerhub](https://cloud.docker.com/repository/docker/jmurihub/seicentosalary/general) bezogen werden.
 
-##Setup
-###Get Image
-###Setup DB
-###Setup Azure AD
+## Setup
+### Get Image
+### Setup DB
+### Setup Azure AD
