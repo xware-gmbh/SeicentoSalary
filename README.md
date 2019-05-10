@@ -1,5 +1,7 @@
 # SeicentoSalary
+![Produktlogo](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/seicento_salary.png "Logo")   
 SeicentoSalary ist eine Weblösung für die Verwaltung von Lohnzahlungen nach Schweizer Recht.
+
 
 ## Toolstack
 Folgende technische Komponenten kommen zum Einsatz
