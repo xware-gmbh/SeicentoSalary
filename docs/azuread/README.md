@@ -9,12 +9,12 @@ Azure Active Directory stellt eine Authentifizierungsmöglichkeit für Cloudlös
 5. SecretKey generieren (wird für die Konfiguration benötigt)
 
 Step 2:   
-![Azureapp Registration](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/azure_appreg_step1.png "Azureapp Registration")   
-![Azureapp Registration](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/azure_appreg_step2.png "Azureapp Registration")
+![Azureapp Registration](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/azure_appreg_step1.PNG "Azureapp Registration")   
+![Azureapp Registration](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/azure_appreg_step2.PNG "Azureapp Registration")
 
 Step 3:   
-![Azureapp URL](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/azure_appreg_step3.png "Azureapp URL")
+![Azureapp URL](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/azure_appreg_step3.PNG "Azureapp URL")
 
 Step 4:   
-![Azureapp secret](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/azure_appreg_step4.png "Azureapp secret")
+![Azureapp secret](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/azure_appreg_step4.PNG "Azureapp secret")
 

@@ -30,4 +30,4 @@ Folgende Voraussetzungen müssen erfüllt sein für die Installation:
 6. Starten Image (_docker-compose up -d_)
 
 Optional:
-* Setup Jasperserver/Reports ([Anleitung](https://github.com/jmurighub/SeicentoSalary/tree/master/docs/jasperserver)
+* Setup Jasperserver/Reports ([Anleitung](https://github.com/jmurighub/SeicentoSalary/tree/master/docs/jasperserver))
