@@ -1,5 +1,5 @@
-# SeicentoSalary
-![Produktlogo](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/seicento_salary.png "Logo") by ![xwr.ch](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/XWareLogo.png "xwr.ch")        
+# SeicentoSalary ![xwr.ch](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/XWareLogo.png "xwr.ch")
+![Produktlogo](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/seicento_salary.png "Logo")         
 SeicentoSalary ist eine Weblösung für die Verwaltung von Lohnzahlungen nach Schweizer Recht. Die App ist seit mehreren Jahren produktiv im Einsatz.  
 
 Die Sourcen der Lösung sind auf [Github](https://github.com/jmurighub/SeicentoSalary) unter der Apache 2.0 Lizenz verfügbar.

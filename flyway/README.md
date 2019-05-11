@@ -12,14 +12,14 @@ For using SeicentoSalary you have to setup a DB first.
 5. Execute _flyway migrate_ from the command line
 6. Execute _flyway info_ from the command line
 
-Step 4:   
-![flywaysql](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/flyway-copyscripts.png "flyway sql")
+Step 4:     
+![flywaysql](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/flyway-copyscripts.PNG "flyway sql")
 
 Step 6:   
-![flyway info](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/flyway-infosalary.png "flyway info")
+![flyway info](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/flyway-infosalary.PNG "flyway info")
 
 Database is ready:  
-![sql management studio](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/sqlmanagementstudio.png "sql managment studio")
+![sql management studio](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/sqlmanagmentstudio.PNG "sql managment studio")
 
 
 ## Next Step

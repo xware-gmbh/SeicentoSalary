@@ -1,5 +1,4 @@
-# SeicentoSalary - Jasper Reports
-![Produktlogo](https://community.jaspersoft.com/sites/all/themes/jasperforge/images/community_logo.png "Logo")  
+# SeicentoSalary - Jasper Reports  
 [Jasper Reports](https://community.jaspersoft.com/project/jasperreports-server) ist ein Reporting Tool Design + Server, welches zusammen mit Seicento Salary genutzt werden kann.
 
 
@@ -9,4 +8,4 @@
 ### Setup
 tba
 
-![Jasperserver](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/Jasper_SalaryOverview.png "Jasperserver")
+![Jasperserver](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/Jasper_SalaryOverview.PNG "Jasperserver")   
