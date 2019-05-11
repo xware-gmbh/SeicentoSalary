@@ -10,7 +10,7 @@ RUN set -x && \
     cd $CATALINA_HOME &&\
     wget https://github.com/jmurighub/SeicentoSalary/releases/download/${SALARY_VERSION}/SeicentoSalary.war -O ./webapps/SeicentoSalary.war &&\
     pwd &&\
-    ls -l
+    ls ./webapps/* -l
     
-EXPOSE 8080 8443
+EXPOSE 8080
 CMD ["catalina.sh", "run"]
