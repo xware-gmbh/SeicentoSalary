@@ -100,7 +100,11 @@ public class CalculationHelper {
         	solValue = dto.getSlrSalaryBase();  //Basis für SOL, gesamter Lohn
 			if (solValue > currentBrutSalary) {
 				solValue = currentBrutSalary;
-			}        	
+			}
+			//TFS203 nur der Teil der überschreitet ist pflichtig
+			if (totSalary - clcDto.getSlxSldLowerBoundry() < solValue) {
+				solValue = totSalary - clcDto.getSlxSldLowerBoundry();
+			}
         }
         values.setSolValue(solValue);
 
