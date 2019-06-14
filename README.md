@@ -34,4 +34,4 @@ Optional:
 * Setup Jasperserver/Reports ([Anleitung](https://github.com/jmurighub/SeicentoSalary/tree/master/docs/jasperserver))
 
 ## PrintScreen
-![StartScreen](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/SeicentoSalary_Overview.PNG "StartScreen")
+![StartScreen](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/SeicentoSalary_OverviewBvg.PNG "StartScreen")
