@@ -1,5 +1,6 @@
-# SeicentoSalary ![xwr.ch](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/XWareLogo.png "xwr.ch")
-![Produktlogo](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/seicento_salary.png "Logo") [![Build status](https://xwr.visualstudio.com/XWare/_apis/build/status/Dockerhub%20SeicentoSalary-FromTemplate-Task)](https://xwr.visualstudio.com/XWare/_build/latest?definitionId=22)         
+# ![Produktlogo](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/seicento_salary.png "Logo") ![xwr.ch](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/XWareLogo.png "xwr.ch")
+[![Build status](https://xwr.visualstudio.com/XWare/_apis/build/status/Dockerhub%20SeicentoSalary-FromTemplate-Task)](https://xwr.visualstudio.com/XWare/_build/latest?definitionId=22)
+         
 SeicentoSalary ist eine Weblösung für die Verwaltung von Lohnzahlungen nach Schweizer Recht. Die App ist seit mehreren Jahren produktiv im Einsatz.  
 
 Die Sourcen der Lösung sind auf [Github](https://github.com/jmurighub/SeicentoSalary) unter der Apache 2.0 Lizenz verfügbar.
@@ -31,3 +32,6 @@ Folgende Voraussetzungen müssen erfüllt sein für die Installation:
 
 Optional:
 * Setup Jasperserver/Reports ([Anleitung](https://github.com/jmurighub/SeicentoSalary/tree/master/docs/jasperserver))
+
+## PrintScreen
+![StartScreen](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/SeicentoSalary_Overview.PNG "StartScreen")
