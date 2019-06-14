@@ -10,7 +10,7 @@ services:
       - DB_URL_TEST=jdbc:sqlserver:[SERVER]:1433;database=[DBNAME];encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
       - DB_USR_TEST=[DBUSER]
       - DB_PWD_TEST=[DBPASSWORD]
-      - tenantid=xwr.ch
+      - tenantid=[Company.com]
       - clientid=[Azure ClientID]
       - clientkey=[Azure Client Key]
       
@@ -34,14 +34,14 @@ services:
 
     depends_on:
       - svc-salary
-      - svc-billing
+      #- svc-billing
 
     volumes:
       - ./nginx-TEST.conf:/etc/nginx/conf.d/default.conf
       - ./html:/usr/share/nginx/html
       - ./dh-param/dhparam-4096.pem:/etc/ssl/certs/dhparam-4096.pem
-      - /docker-volumes/etc/letsencrypt/live/seicento.t1.xwr.ch/fullchain.pem:/etc/letsencrypt/live/seicento.t1.xwr.ch/fullchain.pem
-      - /docker-volumes/etc/letsencrypt/live/seicento.t1.xwr.ch/privkey.pem:/etc/letsencrypt/live/seicento.t1.xwr.ch/privkey.pem
+      - /docker-volumes/etc/letsencrypt/live/seicento.xxxxxxxxxxxxxx.ch/fullchain.pem:/etc/letsencrypt/live/seicento.xxxxxx.ch/fullchain.pem
+      - /docker-volumes/etc/letsencrypt/live/seicento.xxxxxxxxxxxxxx.ch/privkey.pem:/etc/letsencrypt/live/seicento.xxxxxx.ch/privkey.pem
 
     restart: always
 
