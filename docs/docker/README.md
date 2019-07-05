@@ -5,7 +5,7 @@ Anleitung für die Installation findet man hier: [Docker Desktop](https://docs.d
 
 ## Instruction Steps
 1. Erstellen Arbeitsverzeichnis z.b _C:\xtra\docker\SeicentoSalary_
-2. Kopieren [docker-compose-simple.yml](https://github.com/jmurighub/SeicentoSalary/blob/master/docker/docker-compose-simple.yml) nach_C:\xtra\docker\SeicentoSalary\docker-compose.yml_
+2. Kopieren [docker-compose-simple.yml](https://github.com/jmurighub/SeicentoSalary/blob/master/docker/docker-compose-simple.yml) nach _C:\xtra\docker\SeicentoSalary\docker-compose.yml_
 3. Anpassen docker-compose.yml
 4. Starten Container
 

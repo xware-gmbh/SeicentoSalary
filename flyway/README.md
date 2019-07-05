@@ -43,7 +43,7 @@ Um flyway zu testen wie folgt vorgehen:
 * ausführen _flyway migrate_
 
 Output flyway info könnte in etwa so aussehen:  
-![flyway info](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/flyway-infosalary.PNG) "flyway info"   
+![flyway info](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/flyway-infosalary.PNG "flyway info")   
 
 ### DB migrieren mit flyway
 Um die Tabellen zu erstellen sind nun noch folgende Schritte nötig:
@@ -51,10 +51,9 @@ Um die Tabellen zu erstellen sind nun noch folgende Schritte nötig:
 * ausführen _flyway migrate_ von der Kommandozeile
 
 Kopierte SQL Dateien:    
-![flywaysql](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/flyway-copyscripts.PNG) "flyway sql")
+![flywaysql](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/flyway-copyscripts.PNG "flyway sql"))
 
-Nachdem _flyway migrate_ durchgelaufen ist, sollten nun die Tabellen vorhanden sein: ![sql management studio](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/sqlmanagmentstudio.PNG) "sql managment studio")
-
+Nachdem _flyway migrate_ durchgelaufen ist, sollten nun die Tabellen vorhanden sein: ![sql management studio](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/sqlmanagmentstudio.PNG "sql managment studio")  )
 
 ## Next Step
 Registrieren einer App im Azure Portal ([Anleitung](https://github.com/jmurighub/SeicentoSalary/tree/master/docs/azuread))   

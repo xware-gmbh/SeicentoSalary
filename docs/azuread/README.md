@@ -22,5 +22,5 @@ Step 4: generieren _Secret_. Der Wert muss bei der Erstellung kopiert werden, da
 ![Azureapp secret](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/azure_appreg_step4.PNG "Azureapp secret")
 
 ## Next Step
-Erstellen von [docker-compose.yml](https://github.com/jmurighub/SeicentoSalary/blob/master/docker/docker-compose.yml)   
+Docker ([Anleitung](https://github.com/jmurighub/SeicentoSalary/tree/master/docs/docker))   
  
