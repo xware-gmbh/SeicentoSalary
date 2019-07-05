@@ -25,7 +25,7 @@ Folgende Voraussetzungen müssen erfüllt sein für die Installation:
 ### Installation Steps
 1. Bereitstellen einer SQL DB ([Anleitung](https://github.com/jmurighub/SeicentoSalary/tree/master/flyway)) 
 2. Registrieren einer App im Azure Portal ([Anleitung](https://github.com/jmurighub/SeicentoSalary/tree/master/docs/azuread))
-3. Starten des Docker Containers [Anleitung](https://github.com/jmurighub/SeicentoSalary/tree/master/docs/docker)
+3. Starten des Docker Containers ([Anleitung](https://github.com/jmurighub/SeicentoSalary/tree/master/docs/docker))
 
 Optional:
 * Setup Jasperserver/Reports ([Anleitung](https://github.com/jmurighub/SeicentoSalary/tree/master/docs/jasperserver))

@@ -1,7 +1,7 @@
 # Docker Desktop
 Wir gehen davon aus, dass Docker Desktop auf der Windows Maschine installiert ist und Grundkenntnisse für Docker vorhanden sind.
 Anleitung für die Installation findet man hier: [Docker Desktop](https://docs.docker.com/docker-for-windows/install/)    
-![Logo](https://docs.docker.com/images/docker-docs-logo.svg)
+![Logo](https://upload.wikimedia.org/wikipedia/commons/archive/7/79/20140516082115%21Docker_%28container_engine%29_logo.png)
 
 ## Instruction Steps
 1. Erstellen Arbeitsverzeichnis z.b _C:\xtra\docker\SeicentoSalary_
