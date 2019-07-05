@@ -30,23 +30,20 @@ Nachdem flyway heruntergeladen ist (Link unter Step 2) kann die ZIP Datei (im Be
 Nun muss flyway bekannt gegeben werden, welches unsere Ziel DB sein soll. Hierfür editieren wir die Datei _conf/flyway.conf_ und setzen folgende Key/Values:
 
 ---
- # JDBC url to use to connect to the database
 __flyway.url__=jdbc:sqlserver://localhost:1433;database=devsalary;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;  
- # User to use to connect to the database. Flyway will prompt you to enter it if not specified.  
-__flyway.use__r=usrseicento_  
- # Password to use to connect to the database. Flyway will prompt you to enter it if not specified.  
+__flyway.use__r=usrseicento  
 __flyway.password__=[your password]  
 
 ---
 
 ### Test flyway
-Um flyway zu testen wie folgt vorghen:
+Um flyway zu testen wie folgt vorghen:  
 * Starten CMD (Kommandozeile)
 * Navigieren nach C:\xtra\tryout\flyway-5.2.4
 * ausführen _flyway migrate_
 
-Output flyway info könnte in etwa so aussehen:
-![flyway info](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/flyway-infosalary.PNG "flyway info"
+Output flyway info könnte in etwa so aussehen:  
+![flyway info](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/flyway-infosalary.PNG "flyway info"   
 
 ### DB migrieren mit flyway
 Um die Tabellen zu erstellen sind nun noch folgende Schritte nötig:
@@ -60,4 +57,5 @@ Nachdem _flyway migrate_ durchgelaufen ist, sollten nun die Tabellen vorhanden s
 
 
 ## Next Step
-Setup Docker
+Registrieren einer App im Azure Portal ([Anleitung](https://github.com/jmurighub/SeicentoSalary/tree/master/docs/azuread))   
+ 
