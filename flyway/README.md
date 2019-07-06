@@ -40,7 +40,7 @@ __flyway.password__=[your password]
 Um flyway zu testen wie folgt vorgehen:  
 * Starten CMD (Kommandozeile)
 * Navigieren nach C:\xtra\tryout\flyway-5.2.4
-* ausführen _flyway migrate_
+* ausführen _flyway info_
 
 Output flyway info könnte in etwa so aussehen:  
 ![flyway info](https://github.com/jmurighub/SeicentoSalary/blob/master/docs/images/flyway-infosalary.PNG "flyway info")   
