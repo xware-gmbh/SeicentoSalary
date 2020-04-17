@@ -5,7 +5,9 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class TheVersion {
-
+	/** Logger initialized */
+	private static final org.apache.log4j.Logger LOG = org.apache.log4j.Logger.getLogger(TheVersion.class);
+	
 	private final Properties prop;
 
 	public TheVersion() {
@@ -14,9 +16,7 @@ public class TheVersion {
 		try {
 			this.prop.load(resourceAsStream);
 		} catch (final IOException e) {
-			// FIXME: This should be done by using a logging framework like
-			// log4j etc.
-			e.printStackTrace();
+			LOG.error(e);
 		}
 
 //		System.out.println("Version: " + getEntryById("version"));
